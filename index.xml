@@ -28,12 +28,142 @@
     </item>
     
     <item>
-      <title>about</title>
-      <link>http://yaoyao6343.github.io/about/</link>
-      <pubDate>Wed, 30 Mar 2016 17:02:40 +0800</pubDate>
+      <title></title>
+      <link>http://yaoyao6343.github.io/ServerMonitor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://yaoyao6343.github.io/about/</guid>
-      <description>&lt;p&gt;This is a test.&lt;/p&gt;
+      <guid>http://yaoyao6343.github.io/ServerMonitor/</guid>
+      <description>
+
+&lt;h2 id=&#34;shell监控cpu-memory-load-average:a3972792808592970a64e78693571f2a&#34;&gt;shell监控cpu/memory/load average&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;原理：&lt;/strong&gt;
+&amp;gt;1.获取cpu，memory，load average的数值
+&amp;gt;2.判断数值是否超过自定义的范围，例如（CPU&amp;gt;90%，Memory&lt;10%，load average&gt;2）
+&amp;gt;3.如数值超过范围，发送邮件通知管理员。发送有时间间隔，每小时只会发送一次。
+&amp;gt;4.将数值写入log。
+&amp;gt;5.设置crontab 每30秒运行一次。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ServerMonitor.sh&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+# 系统监控,记录cpu、memory、load average,当超过规定数值时发邮件通知管理员
+
+# *** config start ***
+# 当前目录路径
+ROOT=$(cd &amp;quot;$(dirname &amp;quot;$0&amp;quot;)&amp;quot;; pwd)
+
+# 当前服务器名
+HOST=$(hostname)
+
+# log 文件路径
+CPU_LOG=&amp;quot;${ROOT}/logs/cpu.log&amp;quot;
+MEM_LOG=&amp;quot;${ROOT}/logs/mem.log&amp;quot;
+LOAD_LOG=&amp;quot;${ROOT}/logs/load.log&amp;quot;
+
+# 通知邮件列表
+NOTICE_EMAIL=&#39;admin@admin.com&#39;
+
+# cpu,memory,load average 记录上一次发送通知邮件时间
+CPU_REMARK=&#39;/tmp/servermonitor_cpu.remark&#39;
+MEM_REMARK=&#39;/tmp/servermonitor_mem.remark&#39;
+LOAD_REMARK=&#39;/tmp/servermonitor_loadaverage.remark&#39;
+
+# 发通知邮件间隔时间
+REMARK_EXPIRE=3600
+NOW=$(date +%s)
+
+# *** config end ***
+
+# *** function start ***
+# 获取CPU占用
+function GetCpu() {
+    cpufree=$(vmstat 1 5 |sed -n &#39;3,$p&#39; |awk &#39;{x = x + $15} END {print x/5}&#39; |awk -F. &#39;{print $1}&#39;)
+    cpuused=$((100 - $cpufree))
+    echo $cpuused
+
+    local remark
+    remark=$(GetRemark ${CPU_REMARK})
+    # 检查CPU占用是否超过90%
+    if [ &amp;quot;$remark&amp;quot; = &amp;quot;&amp;quot; ] &amp;amp;&amp;amp; [ &amp;quot;$cpuused&amp;quot; -gt 90 ]; then
+        echo &amp;quot;Subject: ${HOST} CPU uses more than 90% $(date +%Y-%m-%d&#39; &#39;%H:%M:%S)&amp;quot; | sendmail ${NOTICE_EMAIL}
+        echo &amp;quot;$(date +%s)&amp;quot; &amp;gt; &amp;quot;$CPU_REMARK&amp;quot;
+    fi
+}
+
+# 获取内存使用情况
+function GetMem() {
+    mem=$(free -m | sed -n &#39;3,3p&#39;)
+    used=$(echo $mem | awk -F &#39; &#39; &#39;{print $3}&#39;)
+    free=$(echo $mem | awk -F &#39; &#39; &#39;{print $4}&#39;)
+    total=$(($used + $free))
+    limit=$(($total/10))
+    echo &amp;quot;${total} ${used} ${free}&amp;quot;
+
+    local remark
+    remark=$(GetRemark ${MEM_REMARK})
+
+    # 检查内存占用是否超过90%
+    if [ &amp;quot;$remark&amp;quot; = &amp;quot;&amp;quot; ] &amp;amp;&amp;amp; [ &amp;quot;$limit&amp;quot; -gt &amp;quot;$free&amp;quot; ]; then
+        echo &amp;quot;Subject: ${HOST} Memory uses more than 90% $(date +%Y-%m-%d&#39; &#39;%H:%M:%S)&amp;quot; | sendmail ${NOTICE_EMAIL}
+        echo &amp;quot;$(date +%s)&amp;quot; &amp;gt; &amp;quot;$MEM_REMARK&amp;quot;
+    fi
+}
+
+# 获取load average
+function GetLoad() {
+    load=$(uptime | awk -F &#39;load average: &#39; &#39;{print $2}&#39;)
+    m1=$(echo $load | awk -F &#39;, &#39; &#39;{print $1}&#39;)
+    m5=$(echo $load | awk -F &#39;, &#39; &#39;{print $2}&#39;)
+    m15=$(echo $load | awk -F &#39;, &#39; &#39;{print $3}&#39;)
+    echo &amp;quot;${m1} ${m5} ${m15}&amp;quot;
+
+    m1u=$(echo $m1 | awk -F &#39;.&#39; &#39;{print $1}&#39;)
+
+    local remark
+    remark=$(GetRemark ${LOAD_REMARK})
+    
+    # 检查是否负载是否有压力
+    if [ &amp;quot;$remark&amp;quot; = &amp;quot;&amp;quot; ] &amp;amp;&amp;amp; [ &amp;quot;$m1u&amp;quot; -gt &amp;quot;2&amp;quot; ]; then
+        echo &amp;quot;Subject: ${HOST} Load Average more than 2 $(date +%Y-%m-%d&#39; &#39;%H:%M:%S)&amp;quot; | sendmail ${NOTICE_EMAIL}
+        echo &amp;quot;$(date +%s)&amp;quot; &amp;gt; &amp;quot;$LOAD_REMARK&amp;quot;
+    fi
+}
+
+# 获取上一次发送邮件时间
+function GetRemark() {
+    local remark
+    
+    if [ -f &amp;quot;$1&amp;quot; ] &amp;amp;&amp;amp; [ -s &amp;quot;$1&amp;quot; ]; then
+        remark=$(cat $1)
+        if [ $(( $NOW - $remark )) -gt &amp;quot;$REMARK_EXPIRE&amp;quot; ]; then
+            rm -f $1
+            remark=&amp;quot;&amp;quot;
+        fi
+    else
+        remark=&amp;quot;&amp;quot;
+    fi
+    echo $remark
+}
+
+# *** function end ***
+
+cpuinfo=$(GetCpu)
+meminfo=$(GetMem)
+loadinfo=$(GetLoad)
+
+echo &amp;quot;cpu: ${cpuinfo}&amp;quot; &amp;gt;&amp;gt; &amp;quot;${CPU_LOG}&amp;quot;
+echo &amp;quot;mem: ${meminfo}&amp;quot; &amp;gt;&amp;gt; &amp;quot;${MEM_LOG}&amp;quot;
+echo &amp;quot;load: ${loadinfo}&amp;quot; &amp;gt;&amp;gt; &amp;quot;${LOAD_LOG}&amp;quot;
+
+exit 0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;crontab&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;* * * * * /home/xxxx/ServerMonitor.sh
+* * * * * sleep 30; /home/xxxx/ServerMonitor.sh
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
