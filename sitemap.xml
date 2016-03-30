@@ -3,17 +3,18 @@
   
   <url>
     <loc>http://yaoyao6343.github.io/</loc>
-    <lastmod>2016-03-30T17:03:54+08:00</lastmod>
+    <lastmod>2016-03-30T17:03:57+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://yaoyao6343.github.io/ServerMonitor/</loc>
+    <lastmod>2016-03-30T17:03:57+08:00</lastmod>
   </url>
   
   <url>
     <loc>http://yaoyao6343.github.io/post/first/</loc>
     <lastmod>2016-03-30T17:03:54+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://yaoyao6343.github.io/ServerMonitor/</loc>
   </url>
   
 </urlset>
