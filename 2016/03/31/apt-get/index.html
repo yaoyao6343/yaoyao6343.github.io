@@ -1,61 +1,39 @@
 <!DOCTYPE html><html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>apt-get | yaoyao</title><link rel="stylesheet" type="text/css" href="/css/normalize.css"><link rel="stylesheet" type="text/css" href="/css/highlight.css"><link rel="stylesheet" type="text/css" href="/css/very-simple.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"></head><body><!-- include the sidebar--><!-- include ./includes/sidebar.jade--><!-- Blog title and subtitle--><header><div class="container header"><a id="logo" href="/." class="title">yaoyao</a><span class="subtitle">Personal Blog</span><label id="toggle-menu" for="menu" onclick><i class="fa fa-bars"></i></label></div></header><!-- use checkbox hack for toggle nav-bar on small screens--><input id="menu" type="checkbox"><!-- Navigation Links--><nav id="nav"><div class="container"><a href="/" class="sidebar-nav-item active">Home</a><a href="/archives" class="sidebar-nav-item">Archives</a></div></nav><div id="header-margin-bar"></div><!-- gallery that comes before the header--><div class="wrapper"><div class="container post-header"><h1>apt-get</h1></div></div><div class="wrapper"><div class="container meta"><div class="post-time">2016.03.31 14:31:03</div><div class="post-tags"><a class="post-tag-link" href="/tags/software/">software</a></div></div></div><article><div class="container post"><p>记录一些apt-get的基本操作和设置。<br><a id="more"></a></p>
 <h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><ol>
 <li><p>更新源(/etc/apt/sources.list)</p>
-<blockquote>
-<p>$ sudo apt-get update</p>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>更新所有已安装的软件包</p>
-<blockquote>
-<p>$ sudo apt-get upgrade</p>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>升级系统</p>
-<blockquote>
-<p>$ sudo apt-get dist-upgrade</p>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get dist-upgrade</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>安装(升级)一个或多个软件</p>
-<blockquote>
-<p>$ sudo apt-get install pac1  pac2  pac3…</p>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install pac1  pac2  pac3...</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>删除软件，用法同install，会保留配置文件</p>
-<blockquote>
-<p>$ sudo apt-get remove pac1  pac2  pac3…</p>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get remove pac1  pac2  pac3...</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>用法通remove，将删除配置文件</p>
-<blockquote>
-<p>$ sudo apt-get purge pac1 pac2 pac3…</p>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get purge pac1 pac2 pac3...</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>更新缓存，检查是否有损坏的依赖</p>
-<blockquote>
-<p>$ sudo apt-get check</p>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get check</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>清除不能下载和无用的包</p>
-<blockquote>
-<p>$ sudo apt-get autoclean<br>$ sudo apt-get autoremove</p>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get autoclean</span><br><span class="line">$ sudo apt-get autoremove</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <h2 id="使用代理"><a href="#使用代理" class="headerlink" title="使用代理"></a>使用代理</h2><ol>
 <li><p>使用配置文件</p>
-<blockquote>
-<p>$ cat apt_proxy.conf<br>Acquire::http::proxy “<a href="http://127.0.0.1:8000/" target="_blank" rel="external">http://127.0.0.1:8000/</a>“;<br>Acquire::ftp::proxy “ftp://127.0.0.1:8000/“;<br>Acquire::https::proxy “<a href="https://127.0.0.1:8000/" target="_blank" rel="external">https://127.0.0.1:8000/</a>“;<br>$ sudo apt-get -c apt_proxy.conf search/install/remove/…</p>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ cat apt_proxy.conf</span><br><span class="line">Acquire::http::proxy &quot;http://127.0.0.1:8000/&quot;;</span><br><span class="line">Acquire::ftp::proxy &quot;ftp://127.0.0.1:8000/&quot;;</span><br><span class="line">Acquire::https::proxy &quot;https://127.0.0.1:8000/&quot;;</span><br><span class="line">$ sudo apt-get -c apt_proxy.conf search/install/remove/...</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>命令行指定参数</p>
-<blockquote>
-<p>$ sudo apt-get -o Acquire::http::proxy=”<a href="http://127.0.0.1:8000/" target="_blank" rel="external">http://127.0.0.1:8000/</a>“ search/install/remove/…</p>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get -o Acquire::http::proxy=&quot;http://127.0.0.1:8000/&quot; search/install/remove/...</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>设置环境变量</p>
-<blockquote>
-<p>$ export http_proxy=<a href="http://127.0.0.1:8000" target="_blank" rel="external">http://127.0.0.1:8000</a><br>$ export https_proxy=<a href="http://127.0.0.1:8000" target="_blank" rel="external">http://127.0.0.1:8000</a><br>$ sudo apt-get search/install/remove/…</p>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ export http_proxy=http://127.0.0.1:8000</span><br><span class="line">$ export https_proxy=http://127.0.0.1:8000</span><br><span class="line">$ sudo apt-get search/install/remove/...</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 </div><!-- comment system--><div class="container"><hr></div></article><footer id="footer"><div class="container"><div class="bar"><div class="social"><a href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></div><div class="footer">© 2016 <a href="/" rel="nofollow">yaoyao</a>. Powered by <a rel="nofollow" target="_blank" href="https://hexo.io">Hexo</a>. Theme <a target="_blank" href="https://github.com/lotabout/very-simple">very-simple</a>.</div></div></div></footer><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.css"><script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script><script src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script><script>$(document).ready(function() {
