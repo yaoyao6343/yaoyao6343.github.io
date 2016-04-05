@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Sublime Text使用记录 | yaoyao</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="据说程序员喜欢折腾的几样东西是键盘、编辑器、字体，双手赞成！一直在尝试/找寻轻便、实用、跨平台、功能强大、主题丰富（原谅我要求太多）的编辑器，直到接触了号称最性感编辑器的Sublime，其他编辑器从此变路人。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sublime Text使用记录">
+<meta property="og:url" content="http://yoursite.com/2016/04/01/sublime/index.html">
+<meta property="og:site_name" content="yaoyao">
+<meta property="og:description" content="据说程序员喜欢折腾的几样东西是键盘、编辑器、字体，双手赞成！一直在尝试/找寻轻便、实用、跨平台、功能强大、主题丰富（原谅我要求太多）的编辑器，直到接触了号称最性感编辑器的Sublime，其他编辑器从此变路人。">
+<meta property="og:updated_time" content="2016-04-01T08:13:21.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sublime Text使用记录">
+<meta name="twitter:description" content="据说程序员喜欢折腾的几样东西是键盘、编辑器、字体，双手赞成！一直在尝试/找寻轻便、实用、跨平台、功能强大、主题丰富（原谅我要求太多）的编辑器，直到接触了号称最性感编辑器的Sublime，其他编辑器从此变路人。">
+  
+    <link rel="alternative" href="/atom.xml" title="yaoyao" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-sublime" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Sublime Text使用记录
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/04/01/sublime/" class="article-date">
+  <time datetime="2016-04-01T05:13:32.000Z" itemprop="datePublished">2016-04-01</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>据说程序员喜欢折腾的几样东西是键盘、编辑器、字体，双手赞成！一直在尝试/找寻轻便、实用、跨平台、功能强大、主题丰富（原谅我要求太多）的编辑器，直到接触了号称最性感编辑器的Sublime，其他编辑器从此变路人。</p>
+<a id="more"></a>
+<h2 id="1-安装Sublime-Text及其插件"><a href="#1-安装Sublime-Text及其插件" class="headerlink" title="1. 安装Sublime Text及其插件"></a>1. 安装Sublime Text及其插件</h2><p>到Sublime Text官网下载指定版本(推荐使用压缩包形式，解压即可用)：<br><a href="http://www.sublimetext.com/" target="_blank" rel="external">http://www.sublimetext.com/</a></p>
+<h3 id="1-1-Linux下破解Sublime-Text-2"><a href="#1-1-Linux下破解Sublime-Text-2" class="headerlink" title="1.1 Linux下破解Sublime Text 2"></a>1.1 Linux下破解Sublime Text 2</h3><p>默认安装的Sublime Text是没有注册的，软件顶部会显示(UNREGISTERED)，但不影响使用。这里介绍Linux下对Sublime Text 2的破解。</p>
+<ul>
+<li>vim sublime_text</li>
+<li>将文件转成十六进制形式，vim输入<code>:%!xxd</code></li>
+<li>查找数字串“4333 3342 3032”，将其中的3342改为3242 (完整查找不一定找到，建议查找4333，再一个一个的看)</li>
+<li>将文件转换回去，vim输入<code>:%!xxd -r</code>，保存退出</li>
+<li>运行程序，Enter License注册（附两枚算好的License）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">—–BEGIN LICENSE—–</span><br><span class="line">Jat</span><br><span class="line">Unlimited User License</span><br><span class="line">EA7E-4656</span><br><span class="line">D6B5CE42CFFD356FD6F782BE4D8D6E9A</span><br><span class="line">F2DD8A265E67DD14C9B6627E9103E290</span><br><span class="line">16FEB67F9DBE65D8434A31D2352A9C80</span><br><span class="line">D7DDCC7BCCCA381D521F5DF49B0F7E5C</span><br><span class="line">5A1B8F4ADE30EF20BEF4020B4D899AE4</span><br><span class="line">60FE1355D8A8B71FE7350B52B4D88969</span><br><span class="line">F42E6248426E64B6BB85A1217AFB7F04</span><br><span class="line">51432FBA46AA531550D638910BAD6FE3</span><br><span class="line">—–END LICENSE—–</span><br><span class="line"></span><br><span class="line">—–BEGIN LICENSE—–</span><br><span class="line">SinoSky</span><br><span class="line">Unlimited User License</span><br><span class="line">EA7E-17525</span><br><span class="line">C14974DF6829CA02CA9C0D9D53ED6D17</span><br><span class="line">0B753302A37BA6997616AC6A88FF69C8</span><br><span class="line">E62B834C8250634C2A7E5E5D0BE3A284</span><br><span class="line">756FD4E2B4FEAC1775868B78E8ACC70C</span><br><span class="line">F7AA16FF7894A0E3F6B1DBCA940D20A6</span><br><span class="line">3C86FC4CB4EFE4B55FC65846AB8C129F</span><br><span class="line">EF9EBEA0476ECAD25CDE43FB6EB3F211</span><br><span class="line">497120783280FAE7DFA8CEAB405EFECD</span><br><span class="line">—–END LICENSE—–</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="1-2-安装Package-Control"><a href="#1-2-安装Package-Control" class="headerlink" title="1.2 安装Package Control"></a>1.2 安装Package Control</h3><p><strong>在线安装</strong></p>
+<ul>
+<li>“<strong>Ctrl+`</strong>”进入命令行模式，输入以下代码并回车</li>
+<li><p>Sublime Text 2:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib2,os,hashlib;</span><br><span class="line">h = <span class="string">'2915d1851351e5ee549c20394736b442'</span> + <span class="string">'8bc59f460fa1548d1514676163dafc88'</span>;</span><br><span class="line">pf = <span class="string">'Package Control.sublime-package'</span>;</span><br><span class="line">ipp = sublime.installed_packages_path();</span><br><span class="line">os.makedirs( ipp ) <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(ipp) <span class="keyword">else</span> <span class="keyword">None</span>;</span><br><span class="line">urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) );</span><br><span class="line">by = urllib2.urlopen( <span class="string">'http://packagecontrol.io/'</span> + pf.replace(<span class="string">' '</span>, <span class="string">'%20'</span>)).read();</span><br><span class="line">dh = hashlib.sha256(by).hexdigest();</span><br><span class="line">open( os.path.join( ipp, pf), <span class="string">'wb'</span> ).write(by) <span class="keyword">if</span> dh == h <span class="keyword">else</span> <span class="keyword">None</span>;</span><br><span class="line">print(<span class="string">'Error validating download (got %s instead of %s), please try manual install'</span> % (dh, h) <span class="keyword">if</span> dh != h <span class="keyword">else</span> <span class="string">'Please restart Sublime Text to finish installation'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Sublime Text 3:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request,os,hashlib;</span><br><span class="line">h = <span class="string">'2915d1851351e5ee549c20394736b442'</span> + <span class="string">'8bc59f460fa1548d1514676163dafc88'</span>;</span><br><span class="line">pf = <span class="string">'Package Control.sublime-package'</span>;</span><br><span class="line">ipp = sublime.installed_packages_path();</span><br><span class="line">urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) );</span><br><span class="line">by = urllib.request.urlopen( <span class="string">'http://packagecontrol.io/'</span> + pf.replace(<span class="string">' '</span>, <span class="string">'%20'</span>)).read();</span><br><span class="line">dh = hashlib.sha256(by).hexdigest();</span><br><span class="line">print(<span class="string">'Error validating download (got %s instead of %s), please try manual install'</span> % (dh, h)) <span class="keyword">if</span> dh != h <span class="keyword">else</span> open(os.path.join( ipp, pf), <span class="string">'wb'</span> ).write(by)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>手动安装</strong></p>
+<ul>
+<li>在菜单栏点击Preferences -&gt; Browse Packages…，此时会打开一个名为Packages的文件夹</li>
+<li>退回Packages文件夹的上一级目录，找到一个名为Installed Packages的文件夹</li>
+<li>下载<a href="https://packagecontrol.io/Package%20Control.sublime-package" target="_blank" rel="external">Package Control.sublime-package</a>，移动到Installed Packages目录</li>
+<li>重启Sublime Text</li>
+</ul>
+<blockquote>
+<p>参考网站：<a href="https://packagecontrol.io/installation" target="_blank" rel="external">https://packagecontrol.io/installation</a></p>
+</blockquote>
+<h3 id="1-3-安装-删除-查看插件"><a href="#1-3-安装-删除-查看插件" class="headerlink" title="1.3 安装/删除/查看插件"></a>1.3 安装/删除/查看插件</h3><p>Ctrl + Shift + P，弹出编辑框</p>
+<ul>
+<li>安装： 输入install，选择Package Control: Install Package</li>
+<li>卸载： 输入remove，选择Package Control: Remove Package</li>
+<li>查看： 输入list，选择Package Control: List Package</li>
+</ul>
+<h2 id="2-配置"><a href="#2-配置" class="headerlink" title="2. 配置"></a>2. 配置</h2><h3 id="2-1-Sublime-Text基本配置"><a href="#2-1-Sublime-Text基本配置" class="headerlink" title="2.1 Sublime Text基本配置"></a>2.1 Sublime Text基本配置</h3><p>Preferences -&gt; Settings - User (详细的参数配置可以在Settings - Default中查看)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;bold_folder_labels&quot;: false,</span><br><span class="line">    &quot;ensure_newline_at_eof_on_save&quot;: true,</span><br><span class="line">    &quot;draw_white_space&quot;: &quot;all&quot;,</span><br><span class="line">    &quot;font_size&quot;: 11,</span><br><span class="line">    &quot;highlight_line&quot;: true,</span><br><span class="line">    &quot;rulers&quot;:    // 右边80, 100, 120个字符处显示边界线</span><br><span class="line">    [</span><br><span class="line">        80,</span><br><span class="line">        100,</span><br><span class="line">        120</span><br><span class="line">    ],</span><br><span class="line">    &quot;show_line_endings&quot;: true,</span><br><span class="line">    &quot;translate_tabs_to_spaces&quot;: true,</span><br><span class="line">    &quot;trim_automatic_white_space&quot;: true,</span><br><span class="line">    &quot;trim_trailing_white_space_on_save&quot;: false,</span><br><span class="line">    &quot;highlight_modified_tabs&quot;: true,</span><br><span class="line">    &quot;word_wrap&quot;: &quot;true&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-2-配置实用代理"><a href="#2-2-配置实用代理" class="headerlink" title="2.2 配置实用代理"></a>2.2 配置实用代理</h3><p>Preferences -&gt; Package Settings -&gt; Package Control -&gt; Settings - Default<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;http_proxy&quot;: &quot;http://127.0.0.1:8080&quot;,    // http://host:port</span><br><span class="line">&quot;https_proxy&quot;: &quot;http://127.0.0.1:8080&quot;,    // https://host:port</span><br><span class="line">&quot;proxy_username&quot;: &quot;&quot;,    // 可不填</span><br><span class="line">&quot;proxy_password&quot;: &quot;&quot;,    // 可不填</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>TODO: 持续更新中……</p>
+</blockquote>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/31/pomodoro-technique/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">初识番茄工作法</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2016 yaoyao 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
