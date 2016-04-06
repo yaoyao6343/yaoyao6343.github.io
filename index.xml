@@ -6,25 +6,25 @@
     <description>Recent content on yaoyao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 06 Apr 2016 15:47:22 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 01 Apr 2016 15:47:22 +0800</lastBuildDate>
     <atom:link href="http://yaoyao6343.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>sublime</title>
+      <title>Sublime Text使用记录</title>
       <link>http://yaoyao6343.github.io/post/sublime/</link>
-      <pubDate>Wed, 06 Apr 2016 15:47:22 +0800</pubDate>
+      <pubDate>Fri, 01 Apr 2016 15:47:22 +0800</pubDate>
       
       <guid>http://yaoyao6343.github.io/post/sublime/</guid>
       <description>
 
 &lt;p&gt;据说程序员喜欢折腾的几样东西是键盘、编辑器、字体，双手赞成！一直在尝试/找寻轻便、实用、跨平台、功能强大、主题丰富（原谅我要求太多）的编辑器，直到接触了号称最性感编辑器的Sublime，其他编辑器从此变路人。&lt;/p&gt;
 
-&lt;h1 id=&#34;安装sublime-text及其插件:156810766b2e870ff15329801f943416&#34;&gt;安装Sublime Text及其插件&lt;/h1&gt;
+&lt;h2 id=&#34;安装sublime-text及其插件:156810766b2e870ff15329801f943416&#34;&gt;安装Sublime Text及其插件&lt;/h2&gt;
 
 &lt;p&gt;到Sublime Text官网下载指定版本(推荐使用压缩包形式，解压即可用)：
 &lt;a href=&#34;http://www.sublimetext.com/&#34;&gt;http://www.sublimetext.com/&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;linux下破解sublime-text-2:156810766b2e870ff15329801f943416&#34;&gt;Linux下破解Sublime Text 2&lt;/h2&gt;
+&lt;h3 id=&#34;linux下破解sublime-text-2:156810766b2e870ff15329801f943416&#34;&gt;Linux下破解Sublime Text 2&lt;/h3&gt;
 
 &lt;p&gt;默认安装的Sublime Text是没有注册的，软件顶部会显示(UNREGISTERED)，但不影响使用。这里介绍Linux下对Sublime Text 2的破解。&lt;/p&gt;
 
@@ -33,9 +33,10 @@
 &lt;li&gt;将文件转成十六进制形式，vim输入&lt;code&gt;:%!xxd&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;查找数字串“4333 3342 3032”，将其中的3342改为3242 (完整查找不一定找到，建议查找4333，再一个一个的看)&lt;/li&gt;
 &lt;li&gt;将文件转换回去，vim输入&lt;code&gt;:%!xxd -r&lt;/code&gt;，保存退出&lt;/li&gt;
-&lt;li&gt;运行程序，Enter License注册（附两枚算好的License）
-```
-—–BEGIN LICENSE—–
+&lt;li&gt;运行程序，Enter License注册（附两枚算好的License）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;—–BEGIN LICENSE—–
 Jat
 Unlimited User License
 EA7E-4656
@@ -47,10 +48,9 @@ D7DDCC7BCCCA381D521F5DF49B0F7E5C
 60FE1355D8A8B71FE7350B52B4D88969
 F42E6248426E64B6BB85A1217AFB7F04
 51432FBA46AA531550D638910BAD6FE3
-—–END LICENSE—–&lt;/li&gt;
-&lt;/ul&gt;
+—–END LICENSE—–
 
-&lt;p&gt;—–BEGIN LICENSE—–
+—–BEGIN LICENSE—–
 SinoSky
 Unlimited User License
 EA7E-17525
@@ -62,17 +62,19 @@ F7AA16FF7894A0E3F6B1DBCA940D20A6
 3C86FC4CB4EFE4B55FC65846AB8C129F
 EF9EBEA0476ECAD25CDE43FB6EB3F211
 497120783280FAE7DFA8CEAB405EFECD
-—–END LICENSE—–&lt;/p&gt;
+—–END LICENSE—–
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;pre&gt;&lt;code&gt;
-## 安装Package Control
+&lt;h3 id=&#34;安装package-control:156810766b2e870ff15329801f943416&#34;&gt;安装Package Control&lt;/h3&gt;
 
-**在线安装**
+&lt;p&gt;&lt;strong&gt;在线安装&lt;/strong&gt;&lt;/p&gt;
 
-- “**Ctrl+`**”进入命令行模式，输入以下代码并回车
-- Sublime Text 2:
-``` Python
-import urllib2,os,hashlib;
+&lt;ul&gt;
+&lt;li&gt;“&lt;strong&gt;Ctrl+`&lt;/strong&gt;”进入命令行模式，输入以下代码并回车&lt;/li&gt;
+&lt;li&gt;Sublime Text 2:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import urllib2,os,hashlib;
 h = &#39;2915d1851351e5ee549c20394736b442&#39; + &#39;8bc59f460fa1548d1514676163dafc88&#39;;
 pf = &#39;Package Control.sublime-package&#39;;
 ipp = sublime.installed_packages_path();
@@ -85,9 +87,10 @@ print(&#39;Error validating download (got %s instead of %s), please try manual i
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Sublime Text 3:
-&lt;code&gt;Python
-import urllib.request,os,hashlib;
+&lt;li&gt;Sublime Text 3:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import urllib.request,os,hashlib;
 h = &#39;2915d1851351e5ee549c20394736b442&#39; + &#39;8bc59f460fa1548d1514676163dafc88&#39;;
 pf = &#39;Package Control.sublime-package&#39;;
 ipp = sublime.installed_packages_path();
@@ -95,8 +98,7 @@ urllib.request.install_opener( urllib.request.build_opener( urllib.request.Proxy
 by = urllib.request.urlopen( &#39;http://packagecontrol.io/&#39; + pf.replace(&#39; &#39;, &#39;%20&#39;)).read();
 dh = hashlib.sha256(by).hexdigest();
 print(&#39;Error validating download (got %s instead of %s), please try manual install&#39; % (dh, h)) if dh != h else open(os.path.join( ipp, pf), &#39;wb&#39; ).write(by)
-&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;strong&gt;手动安装&lt;/strong&gt;&lt;/p&gt;
 
@@ -108,10 +110,11 @@ print(&#39;Error validating download (got %s instead of %s), please try manual i
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;参考网站：&lt;a href=&#34;https://packagecontrol.io/installation&#34;&gt;https://packagecontrol.io/installation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;参考网站：
+&lt;a href=&#34;https://packagecontrol.io/installation&#34;&gt;https://packagecontrol.io/installation&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&#34;安装-删除-查看插件:156810766b2e870ff15329801f943416&#34;&gt;安装/删除/查看插件&lt;/h2&gt;
+&lt;h3 id=&#34;安装-删除-查看插件:156810766b2e870ff15329801f943416&#34;&gt;安装/删除/查看插件&lt;/h3&gt;
 
 &lt;p&gt;Ctrl + Shift + P，弹出编辑框&lt;/p&gt;
 
@@ -121,9 +124,9 @@ print(&#39;Error validating download (got %s instead of %s), please try manual i
 &lt;li&gt;查看： 输入list，选择Package Control: List Package&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id=&#34;配置:156810766b2e870ff15329801f943416&#34;&gt;配置&lt;/h1&gt;
+&lt;h2 id=&#34;配置:156810766b2e870ff15329801f943416&#34;&gt;配置&lt;/h2&gt;
 
-&lt;h2 id=&#34;sublime-text基本配置:156810766b2e870ff15329801f943416&#34;&gt;Sublime Text基本配置&lt;/h2&gt;
+&lt;h3 id=&#34;sublime-text基本配置:156810766b2e870ff15329801f943416&#34;&gt;Sublime Text基本配置&lt;/h3&gt;
 
 &lt;p&gt;Preferences -&amp;gt; Settings - User (详细的参数配置可以在Settings - Default中查看)：&lt;/p&gt;
 
@@ -148,7 +151,7 @@ print(&#39;Error validating download (got %s instead of %s), please try manual i
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;配置实用代理:156810766b2e870ff15329801f943416&#34;&gt;配置实用代理&lt;/h2&gt;
+&lt;h3 id=&#34;配置实用代理:156810766b2e870ff15329801f943416&#34;&gt;配置实用代理&lt;/h3&gt;
 
 &lt;p&gt;Preferences -&amp;gt; Package Settings -&amp;gt; Package Control -&amp;gt; Settings - Default&lt;/p&gt;
 
@@ -165,9 +168,9 @@ print(&#39;Error validating download (got %s instead of %s), please try manual i
     </item>
     
     <item>
-      <title>pomodoro technique</title>
+      <title>初识番茄工作法</title>
       <link>http://yaoyao6343.github.io/post/pomodoro-technique/</link>
-      <pubDate>Wed, 06 Apr 2016 15:47:15 +0800</pubDate>
+      <pubDate>Thu, 31 Mar 2016 15:47:15 +0800</pubDate>
       
       <guid>http://yaoyao6343.github.io/post/pomodoro-technique/</guid>
       <description>
@@ -226,9 +229,9 @@ print(&#39;Error validating download (got %s instead of %s), please try manual i
     </item>
     
     <item>
-      <title>apt get</title>
+      <title>apt-get命令使用</title>
       <link>http://yaoyao6343.github.io/post/apt-get/</link>
-      <pubDate>Wed, 06 Apr 2016 15:46:52 +0800</pubDate>
+      <pubDate>Thu, 31 Mar 2016 15:46:52 +0800</pubDate>
       
       <guid>http://yaoyao6343.github.io/post/apt-get/</guid>
       <description>

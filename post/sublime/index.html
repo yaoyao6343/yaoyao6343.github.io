@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  <title>sublime &middot; </title>
+  <title>Sublime Text使用记录 &middot; </title>
 
   
   <link rel="stylesheet" href="http://yaoyao6343.github.io/css/poole.css">
@@ -71,19 +71,19 @@
 
 <div class="content container">
   <div class="post">
-    <h1 class="post-title">sublime</h1>
-    <span class="post-date">Apr 6, 2016 &middot; 2 minute read
+    <h1 class="post-title">Sublime Text使用记录</h1>
+    <span class="post-date">Apr 1, 2016 &middot; 2 minute read
     </span>
     
 
 <p>据说程序员喜欢折腾的几样东西是键盘、编辑器、字体，双手赞成！一直在尝试/找寻轻便、实用、跨平台、功能强大、主题丰富（原谅我要求太多）的编辑器，直到接触了号称最性感编辑器的Sublime，其他编辑器从此变路人。</p>
 
-<h1 id="安装sublime-text及其插件:156810766b2e870ff15329801f943416">安装Sublime Text及其插件</h1>
+<h2 id="安装sublime-text及其插件:156810766b2e870ff15329801f943416">安装Sublime Text及其插件</h2>
 
 <p>到Sublime Text官网下载指定版本(推荐使用压缩包形式，解压即可用)：
 <a href="http://www.sublimetext.com/">http://www.sublimetext.com/</a></p>
 
-<h2 id="linux下破解sublime-text-2:156810766b2e870ff15329801f943416">Linux下破解Sublime Text 2</h2>
+<h3 id="linux下破解sublime-text-2:156810766b2e870ff15329801f943416">Linux下破解Sublime Text 2</h3>
 
 <p>默认安装的Sublime Text是没有注册的，软件顶部会显示(UNREGISTERED)，但不影响使用。这里介绍Linux下对Sublime Text 2的破解。</p>
 
@@ -92,9 +92,10 @@
 <li>将文件转成十六进制形式，vim输入<code>:%!xxd</code></li>
 <li>查找数字串“4333 3342 3032”，将其中的3342改为3242 (完整查找不一定找到，建议查找4333，再一个一个的看)</li>
 <li>将文件转换回去，vim输入<code>:%!xxd -r</code>，保存退出</li>
-<li>运行程序，Enter License注册（附两枚算好的License）
-```
-—–BEGIN LICENSE—–
+<li>运行程序，Enter License注册（附两枚算好的License）</li>
+</ul>
+
+<pre><code>—–BEGIN LICENSE—–
 Jat
 Unlimited User License
 EA7E-4656
@@ -106,10 +107,9 @@ D7DDCC7BCCCA381D521F5DF49B0F7E5C
 60FE1355D8A8B71FE7350B52B4D88969
 F42E6248426E64B6BB85A1217AFB7F04
 51432FBA46AA531550D638910BAD6FE3
-—–END LICENSE—–</li>
-</ul>
+—–END LICENSE—–
 
-<p>—–BEGIN LICENSE—–
+—–BEGIN LICENSE—–
 SinoSky
 Unlimited User License
 EA7E-17525
@@ -121,17 +121,19 @@ F7AA16FF7894A0E3F6B1DBCA940D20A6
 3C86FC4CB4EFE4B55FC65846AB8C129F
 EF9EBEA0476ECAD25CDE43FB6EB3F211
 497120783280FAE7DFA8CEAB405EFECD
-—–END LICENSE—–</p>
+—–END LICENSE—–
+</code></pre>
 
-<pre><code>
-## 安装Package Control
+<h3 id="安装package-control:156810766b2e870ff15329801f943416">安装Package Control</h3>
 
-**在线安装**
+<p><strong>在线安装</strong></p>
 
-- “**Ctrl+`**”进入命令行模式，输入以下代码并回车
-- Sublime Text 2:
-``` Python
-import urllib2,os,hashlib;
+<ul>
+<li>“<strong>Ctrl+`</strong>”进入命令行模式，输入以下代码并回车</li>
+<li>Sublime Text 2:</li>
+</ul>
+
+<pre><code class="language-python">import urllib2,os,hashlib;
 h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88';
 pf = 'Package Control.sublime-package';
 ipp = sublime.installed_packages_path();
@@ -144,9 +146,10 @@ print('Error validating download (got %s instead of %s), please try manual insta
 </code></pre>
 
 <ul>
-<li>Sublime Text 3:
-<code>Python
-import urllib.request,os,hashlib;
+<li>Sublime Text 3:</li>
+</ul>
+
+<pre><code class="language-python">import urllib.request,os,hashlib;
 h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88';
 pf = 'Package Control.sublime-package';
 ipp = sublime.installed_packages_path();
@@ -154,8 +157,7 @@ urllib.request.install_opener( urllib.request.build_opener( urllib.request.Proxy
 by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read();
 dh = hashlib.sha256(by).hexdigest();
 print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
-</code></li>
-</ul>
+</code></pre>
 
 <p><strong>手动安装</strong></p>
 
@@ -167,10 +169,11 @@ print('Error validating download (got %s instead of %s), please try manual insta
 </ul>
 
 <blockquote>
-<p>参考网站：<a href="https://packagecontrol.io/installation">https://packagecontrol.io/installation</a></p>
+<p>参考网站：
+<a href="https://packagecontrol.io/installation">https://packagecontrol.io/installation</a></p>
 </blockquote>
 
-<h2 id="安装-删除-查看插件:156810766b2e870ff15329801f943416">安装/删除/查看插件</h2>
+<h3 id="安装-删除-查看插件:156810766b2e870ff15329801f943416">安装/删除/查看插件</h3>
 
 <p>Ctrl + Shift + P，弹出编辑框</p>
 
@@ -180,9 +183,9 @@ print('Error validating download (got %s instead of %s), please try manual insta
 <li>查看： 输入list，选择Package Control: List Package</li>
 </ul>
 
-<h1 id="配置:156810766b2e870ff15329801f943416">配置</h1>
+<h2 id="配置:156810766b2e870ff15329801f943416">配置</h2>
 
-<h2 id="sublime-text基本配置:156810766b2e870ff15329801f943416">Sublime Text基本配置</h2>
+<h3 id="sublime-text基本配置:156810766b2e870ff15329801f943416">Sublime Text基本配置</h3>
 
 <p>Preferences -&gt; Settings - User (详细的参数配置可以在Settings - Default中查看)：</p>
 
@@ -207,7 +210,7 @@ print('Error validating download (got %s instead of %s), please try manual insta
 }
 </code></pre>
 
-<h2 id="配置实用代理:156810766b2e870ff15329801f943416">配置实用代理</h2>
+<h3 id="配置实用代理:156810766b2e870ff15329801f943416">配置实用代理</h3>
 
 <p>Preferences -&gt; Package Settings -&gt; Package Control -&gt; Settings - Default</p>
 
