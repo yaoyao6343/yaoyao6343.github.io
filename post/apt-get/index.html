@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>apt-get命令使用 &middot; </title>
+
+  
+  <link rel="stylesheet" href="http://yaoyao6343.github.io/css/poole.css">
+  <link rel="stylesheet" href="http://yaoyao6343.github.io/css/hyde.css">
+  <link rel="stylesheet" href="http://yaoyao6343.github.io/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://yaoyao6343.github.io/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://yaoyao6343.github.io/css/hyde-x.css">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://yaoyao6343.github.io/touch-icon-144-precomposed.png">
+  <link href="http://yaoyao6343.github.io/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1></h1>
+      
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://yaoyao6343.github.io/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2016 <a href="http://yaoyao6343.github.io/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">apt-get命令使用</h1>
+    <span class="post-date">Mar 31, 2016 &middot; 1 minute read
+    </span>
+    
+
+<p>一段时间不用，老是会忘记一些命令，记录一些apt-get的基本操作和设置。当然，其help信息也可以查到更多。</p>
+
+<h2 id="基本命令:467d17416fe2dd00c2152298120a44df">基本命令</h2>
+
+<table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">操作</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">sudo apt-get update</td>
+<td align="left">更新源(/etc/apt/sources.list)</td>
+</tr>
+
+<tr>
+<td align="left">sudo apt-get upgrade</td>
+<td align="left">更新所有已安装的软件包</td>
+</tr>
+
+<tr>
+<td align="left">sudo apt-get dist-upgrade</td>
+<td align="left">升级系统</td>
+</tr>
+
+<tr>
+<td align="left">sudo apt-get install pac1  pac2&hellip;</td>
+<td align="left">安装(升级)一个或多个软件</td>
+</tr>
+
+<tr>
+<td align="left">sudo apt-get remove pac1  pac2&hellip;</td>
+<td align="left">删除软件，用法同install，会保留配置文件</td>
+</tr>
+
+<tr>
+<td align="left">sudo apt-get purge pac1 pac2&hellip;</td>
+<td align="left">用法同remove，将删除配置文件</td>
+</tr>
+
+<tr>
+<td align="left">sudo apt-get check</td>
+<td align="left">更新缓存，检查是否有损坏的依赖</td>
+</tr>
+
+<tr>
+<td align="left">sudo apt-get autoclean/autoremove</td>
+<td align="left">清除不能下载和无用的包</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="使用代理:467d17416fe2dd00c2152298120a44df">使用代理</h2>
+
+<ul>
+<li><p>使用配置文件</p>
+
+<pre><code class="language-bash">$ cat apt_proxy.conf
+Acquire::http::proxy &quot;http://127.0.0.1:8000/&quot;;
+Acquire::ftp::proxy &quot;ftp://127.0.0.1:8000/&quot;;
+Acquire::https::proxy &quot;https://127.0.0.1:8000/&quot;;
+$ sudo apt-get -c apt_proxy.conf search/install/remove/...
+</code></pre></li>
+
+<li><p>命令行指定参数</p>
+
+<pre><code class="language-bash">$ sudo apt-get -o Acquire::http::proxy=&quot;http://127.0.0.1:8000/&quot; search/install/remove/...
+</code></pre></li>
+
+<li><p>设置环境变量</p>
+
+<pre><code class="language-bash">$ export http_proxy=http://127.0.0.1:8000
+$ export https_proxy=http://127.0.0.1:8000
+$ sudo apt-get search/install/remove/...
+</code></pre></li>
+</ul>
+
+  </div>
+  
+</div>
+
+
+
+
+
+</body>
+</html>
+
