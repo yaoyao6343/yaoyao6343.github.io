@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>yaoyao</title>
-    <link>http://yaoyao6343.github.io/</link>
+    <link>http://yaoyao6343/github.io/</link>
     <description>Recent content on yaoyao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 01 Apr 2016 15:47:22 +0800</lastBuildDate>
-    <atom:link href="http://yaoyao6343.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://yaoyao6343/github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Sublime Text使用记录</title>
-      <link>http://yaoyao6343.github.io/post/sublime/</link>
+      <link>http://yaoyao6343/github.io/post/sublime/</link>
       <pubDate>Fri, 01 Apr 2016 15:47:22 +0800</pubDate>
       
-      <guid>http://yaoyao6343.github.io/post/sublime/</guid>
+      <guid>http://yaoyao6343/github.io/post/sublime/</guid>
       <description>
 
 &lt;p&gt;据说程序员喜欢折腾的几样东西是键盘、编辑器、字体，双手赞成！一直在尝试/找寻轻便、实用、跨平台、功能强大、主题丰富（原谅我要求太多）的编辑器，直到接触了号称最性感编辑器的Sublime，其他编辑器从此变路人。&lt;/p&gt;
@@ -162,17 +162,18 @@ print(&#39;Error validating download (got %s instead of %s), please try manual i
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;TODO: 持续更新中&amp;hellip;&amp;hellip;&lt;/p&gt;
+&lt;p&gt;TODO: 持续更新中&amp;hellip;&amp;hellip;
+ Hello World! &lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
     </item>
     
     <item>
       <title>初识番茄工作法</title>
-      <link>http://yaoyao6343.github.io/post/pomodoro-technique/</link>
+      <link>http://yaoyao6343/github.io/post/pomodoro-technique/</link>
       <pubDate>Thu, 31 Mar 2016 15:47:15 +0800</pubDate>
       
-      <guid>http://yaoyao6343.github.io/post/pomodoro-technique/</guid>
+      <guid>http://yaoyao6343/github.io/post/pomodoro-technique/</guid>
       <description>
 
 &lt;p&gt;番茄工作法是简单易行的时间管理方法，是由弗朗西斯科·西里洛于1992年创立的一种相对于GTD更微观的时间管理方法。不错的方法，强迫自己集中精力做事，且劳逸结合，专治拖延症、坐神及各种椎病。&lt;/p&gt;
@@ -230,10 +231,10 @@ print(&#39;Error validating download (got %s instead of %s), please try manual i
     
     <item>
       <title>apt-get命令使用</title>
-      <link>http://yaoyao6343.github.io/post/apt-get/</link>
+      <link>http://yaoyao6343/github.io/post/apt-get/</link>
       <pubDate>Thu, 31 Mar 2016 15:46:52 +0800</pubDate>
       
-      <guid>http://yaoyao6343.github.io/post/apt-get/</guid>
+      <guid>http://yaoyao6343/github.io/post/apt-get/</guid>
       <description>
 
 &lt;p&gt;一段时间不用，老是会忘记一些命令，记录一些apt-get的基本操作和设置。当然，其help信息也可以查到更多。&lt;/p&gt;
