@@ -6,8 +6,55 @@
     <description>Recent content in Posts on yaoyao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 07 Apr 2016 15:00:22 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 19 Apr 2016 16:40:45 +0800</lastBuildDate>
     <atom:link href="http://yaoyao6343.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>能让你更值钱的十二本书</title>
+      <link>http://yaoyao6343.github.io/post/twelve_books/</link>
+      <pubDate>Tue, 19 Apr 2016 16:40:45 +0800</pubDate>
+      
+      <guid>http://yaoyao6343.github.io/post/twelve_books/</guid>
+      <description>
+
+&lt;p&gt;直接影响工作效率的四种能力：沟通能力、自学能力、自我管理能力、问题解决能力。如果你想升职、加薪、被挖最直接的方法就是提高这四方面的能力。&lt;/p&gt;
+
+&lt;h2 id=&#34;直接提高沟通能力的四本书:3ce0c85f53a24cacc5310d7e4eb0dbce&#34;&gt;直接提高沟通能力的四本书&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;《沟通的艺术： 看入人里，看出人外》&lt;/li&gt;
+&lt;li&gt;《跟任何人都聊得来：写给内向者的沟通心理学》&lt;/li&gt;
+&lt;li&gt;《沟通圣经：听说读写全方位沟通技巧》&lt;/li&gt;
+&lt;li&gt;《争辩力：10%的沟通决定你的成败》&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;直接提高问题解决能力的三本书:3ce0c85f53a24cacc5310d7e4eb0dbce&#34;&gt;直接提高问题解决能力的三本书&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;《认识商业》&lt;/li&gt;
+&lt;li&gt;《麦肯锡教我的思考武器：从逻辑思考到真正解决问题》&lt;/li&gt;
+&lt;li&gt;《你的灯亮着吗?》&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;直接提高自学能力的两本书:3ce0c85f53a24cacc5310d7e4eb0dbce&#34;&gt;直接提高自学能力的两本书&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;《我最想要的记忆魔法书》&lt;/li&gt;
+&lt;li&gt;《走出思维的误区》&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;直接提高自我管理能力的四本书:3ce0c85f53a24cacc5310d7e4eb0dbce&#34;&gt;直接提高自我管理能力的四本书&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;《认识商业》&lt;/li&gt;
+&lt;li&gt;《抗压力：逆境重生法则》&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;原文链接：&lt;a href=&#34;http://www.jianshu.com/p/f90a71cf3994&#34;&gt;http://www.jianshu.com/p/f90a71cf3994&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
     
     <item>
       <title>测试hugo的代码高亮</title>
@@ -21,7 +68,7 @@
 
 &lt;h2 id=&#34;c:ad2564c1ce9511181c38d2c703e51326&#34;&gt;C&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-C&#34;&gt;int main(int argc, char **argv)
+&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;int main(int argc, char **argv)
 {
     printf(&amp;quot;Hello World!\n&amp;quot;);
     return 0;
@@ -37,7 +84,7 @@
 &lt;h2 id=&#34;shell:ad2564c1ce9511181c38d2c703e51326&#34;&gt;Shell&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;if [ $# -ne 1 ]; then
-    echo &amp;quot;$0 xxxx&amp;quot;
+    echo &amp;quot;eg: $0 argv&amp;quot;
 fi
 &lt;/code&gt;&lt;/pre&gt;
 </description>
